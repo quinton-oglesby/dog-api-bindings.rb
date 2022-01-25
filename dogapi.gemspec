@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.required_ruby_version = '>= 3.1.0'
-  s.add_runtime_dependency 'http'
+  s.add_runtime_dependency 'http', '~> 5.0.4'
 end

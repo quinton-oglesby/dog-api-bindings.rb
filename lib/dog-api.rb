@@ -2,6 +2,7 @@
 
 require 'http'
 
+# BASE API URI
 API_ENDPOINT = 'https://dog.ceo/api'
 
 # Returns a hash of all available breeds.

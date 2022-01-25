@@ -2,13 +2,9 @@
 
 Gem::Specification.new do |s|
   s.name        = 'dog_api_bindings'
-  s.version     = '0.1.0'
+  s.version     = '0.1.2'
   s.summary     = 'Ruby API wrapper for the dog.ceo API.'
-  s.description = <<-EOF
-    This is an api wrapper for dog.ceo written in Ruby.
-
-    ```Test```
-  EOF
+  s.description = 'An easy to use api wrapper for the dog.ceo API.'
   s.authors     = ['Quinton Oglesby']
   s.email       = 'qoglesby97@gmail.com'
   s.files       = ['lib/dog-api.rb']

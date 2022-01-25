@@ -125,7 +125,7 @@
           <p>Returns an array of all available images of the given breed.</p>
 
           <div class="method-source-code" id="all_breed_images-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all_breed_images</span>(<span class="ruby-identifier">breed</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breed/#{breed}/images&quot;</span>)
   <span class="ruby-identifier">hashed_response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>[<span class="ruby-string">&#39;message&#39;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
@@ -148,7 +148,7 @@
           <p>Returns an array of all available images of the given breed and sub-breed.</p>
 
           <div class="method-source-code" id="all_sub_breed_images-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all_sub_breed_images</span>(<span class="ruby-identifier">breed</span>, <span class="ruby-identifier">sub_breed</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breed/#{breed}/#{sub_breed}/images&quot;</span>)
   <span class="ruby-identifier">hashed_response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>[<span class="ruby-string">&#39;message&#39;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
@@ -171,7 +171,7 @@
           <p>Returns a hash of all available breeds.</p>
 
           <div class="method-source-code" id="breeds_list-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 9</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">breeds_list</span>
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breeds/list/all&quot;</span>)
   <span class="ruby-identifier">hashed_response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>[<span class="ruby-string">&#39;message&#39;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
@@ -196,7 +196,7 @@
 <p>Due to API limitations, it can only return an amount between 1 and 50.</p>
 
           <div class="method-source-code" id="random_breed_images-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 52</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">random_breed_images</span>(<span class="ruby-identifier">breed</span>, <span class="ruby-identifier">amount</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">50</span>
     <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breed/#{breed}/images/random/#{amount}&quot;</span>)
@@ -225,7 +225,7 @@
 <p>Due to API limitations, it can only return an amount between 1 and 50.</p>
 
           <div class="method-source-code" id="random_images-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">random_images</span>(<span class="ruby-identifier">amount</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">50</span>
     <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breeds/image/random/#{amount}&quot;</span>)
@@ -254,9 +254,8 @@
 <p>Due to API limitations, it can only return an amount between 1 and 50.</p>
 
           <div class="method-source-code" id="random_sub_breed_images-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">random_sub_breed_images</span>(<span class="ruby-identifier">breed</span>, <span class="ruby-identifier">sub_breed</span>, <span class="ruby-identifier">amount</span>)
-
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">50</span>
     <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breed/#{breed}/#{sub_breed}/images/random/#{amount}&quot;</span>)
     <span class="ruby-identifier">hashed_response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>[<span class="ruby-string">&#39;message&#39;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
@@ -282,7 +281,7 @@
           <p>Returns a hash of all available sub-breeds of the given breed.</p>
 
           <div class="method-source-code" id="sub_breeds_list-source">
-            <pre><span class="ruby-comment"># File lib/dog-api.rb, line 16</span>
+            <pre><span class="ruby-comment"># File lib/dog-api-bindings.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sub_breeds_list</span>(<span class="ruby-identifier">breed</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;#{API_ENDPOINT}/breed/#{breed}/list&quot;</span>)
   <span class="ruby-identifier">hashed_response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>[<span class="ruby-string">&#39;message&#39;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>

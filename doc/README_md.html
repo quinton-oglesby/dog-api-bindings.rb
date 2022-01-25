@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-dog_api_bindings.rb">dog_api_bindings.rb</a>
+    <li><a href="#label-An+easy+to+use+wrapper+for+the+dog.ceo+API.">An easy to use wrapper for the dog.ceo API.</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Methods">Methods</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="./README_md.html">README</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-dog_api_bindings.rb">dog_api_bindings.rb<span><a href="#label-dog_api_bindings.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-An+easy+to+use+wrapper+for+the+dog.ceo+API.">An easy to use wrapper for the dog.ceo API.<span><a href="#label-An+easy+to+use+wrapper+for+the+dog.ceo+API.">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>You can install this by running:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">dog_api_bindings</span>
+</pre>
+
+<p>Inside of your Ruby program do:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;dog_api_bindings&quot;</span>
+</pre>
+
+<h3 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><strong>breed_list</strong></p>
+
+<p>Returns a hash of all available breeds. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">breeds</span> = <span class="ruby-identifier">breeds_list</span>
+</pre>
+
+<p><strong>sub_breeds_list(</strong><em>breed</em><strong>)</strong></p>
+
+<p>Returns a hash of all the available sub-breeds of the given breed. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hound_sub_breeds</span> = <span class="ruby-identifier">sub_breeds_list</span>(<span class="ruby-string">&#39;hound&#39;</span>)
+</pre>
+
+<p><strong>all_breed_images(</strong><em>breed</em><strong>)</strong></p>
+
+<p>Returns an array of all available images of the given breed. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hound_images</span> = <span class="ruby-identifier">all_breed_images</span>(<span class="ruby-string">&#39;hound&#39;</span>)
+</pre>
+
+<p><strong>all_sub_breed_images(</strong><em>breed, subbread</em><strong>)</strong></p>
+
+<p>Returns an array of all available images of the given breed and sub-breed. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">afhan_hound_images</span> = <span class="ruby-identifier">all_sub_breed_images</span>(<span class="ruby-string">&#39;hound&#39;</span>, <span class="ruby-string">&#39;afghan&#39;</span>)
+</pre>
+
+<p><strong>random_images(</strong><em>amount</em><strong>)</strong></p>
+
+<p>Returns an array of random breed images equivalent to the passed amount. Due to API limitations, it can only return an amount between 1 and 50. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">dog_images</span> = <span class="ruby-identifier">random_images</span>(<span class="ruby-value">4</span>)
+</pre>
+
+<p><strong>random_breed_images(</strong><em>breed, amount</em><strong>)</strong></p>
+
+<p>Returns an array of breed images equivalent to the passed amount. Due to API limitations, it can only return an amount between 1 and 50. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hound_images</span> = <span class="ruby-identifier">random_breed_images</span>(<span class="ruby-string">&#39;hound&#39;</span> , <span class="ruby-value">4</span>)
+</pre>
+
+<p><strong>random_sub_breed_images(</strong><em>breed, sub_breed, amount</em><strong>)</strong></p>
+
+<p>Returns an array of sub-breed images equivalent to the passed amount. Due to API limitations, it can only return an amount between 1 and 50. Can be used as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">afghan_hound_images</span> = <span class="ruby-identifier">random_sub_breed_images</span>(<span class="ruby-string">&#39;hound&#39;</span>, <span class="ruby-string">&#39;afghan&#39;</span>, <span class="ruby-value">4</span>)
+</pre>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

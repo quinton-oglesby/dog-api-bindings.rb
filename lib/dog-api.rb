@@ -48,7 +48,11 @@ def random_breed_images(breed, amount)
   end
 end
 
+# Returns an amount of sub-breed images equivalent to the passed amount.
+#
+# Due to API limitations, it can only return an amount between 1 and 50.
 def random_sub_breed_images(breed, sub_breed, amount)
+
   if amount >= 1 && amount <= 50
     response = HTTP.get("#{API_ENDPOINT}/breed/#{breed}/#{sub_breed}/images/random/#{amount}")
     hashed_response = response.parse['message'] if response.code == 200

@@ -2,8 +2,6 @@
 
 ## An easy to use wrapper for the dog.ceo API.
 
----
-
 ### Installation
 You can install this by running: 
 

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'An easy to use api wrapper for the dog.ceo API.'
   s.authors     = ['Quinton Oglesby']
   s.email       = 'qoglesby97@gmail.com'
-  s.files       = ['lib/dog-api.rb']
+  s.files       = ['lib/dog-api-bindings.rb']
   s.homepage    = 'https://rubygems.org/gems/dog_api_bindings'
   s.license     = 'MIT'
 
